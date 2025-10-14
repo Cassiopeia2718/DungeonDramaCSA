@@ -11,16 +11,17 @@ public class DungeonDrama {
                             on the right a small Stone door that blends into the wall around it(2) 
                             and in the middle a plain red wooden door, one would find in a nice house(3) /n
                             which door do you choose?");
-        /*while(player key num < 3 && player.alive) {
+        /*while(player.alive) {
+            if(player.keys < 3) {
             room = new Rooms(SEED);
             room.run();
+            }
+            room = new Rooms("Final Room");
+            room.run
         }
         if (!player.alive) {
             System.out.println("You DIED with" + player.keys + "keys!")
-        } 
-        else {
-            room = new Rooms(End Room);
-        } 
+        }
         
         */
         
