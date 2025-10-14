@@ -55,6 +55,51 @@ public class Mob { // create_from_seed(seed) generates a random mob
 
 public class skeleton extends Mob {
     type = "skeleton";
-    weak_to = ["sword, shield"];
+    weak_to = ["sword", "shield"];
+    description = "There stands a gaunt figure, nothing but taters of skin streched over a skeleton, 
+                    in his eyes smolder a pale flame, all thats left of an evil soul.
+                    He draws a bow from his back, and notches an arrow!";
+    drops.put(0, ["arrow"]);
+    drops.put(1, ["arrow"]);
+    drops.put(2, ["arrow"]);
+    drops.put(3, ["arrow"]);
+    drops.put(4, ["arrow"]);
+    drops.put(5, ["Health Potion", "arrow"]);
+    drops.put(6, ["Health Potion", "arrow"]);
+    drops.put(7, ["Key"]);
+    drops.put(8, ["Key"]);
+    drops.put(9, ["Key"]);
+}
 
+public class zombie extends Mob {
+    type = "zombie";
+    weak_to = ["sword", "bow"];
+    description = "A pile of rags, rises in front of you revealing a rotting corpse
+                    It stumbles toward you, following its vile stench!";
+    drops.put(0, null);
+    drops.put(1, null);
+    drops.put(2, null);
+    drops.put(3, null);
+    drops.put(4, ["Health Potion"]);
+    drops.put(5, ["Health Potion"]);
+    drops.put(6, ["Health Potion"]);
+    drops.put(7, ["Key"]);
+    drops.put(8, ["Key"]);
+    drops.put(9, ["Key"]);
+}
+
+public class slime extends Mob {
+    type = "slime";
+    weak_to = ["Bow"];
+    description = ""
+    drops.put(0, null);
+    drops.put(1, null);
+    drops.put(2, null);
+    drops.put(3, null);
+    drops.put(4, ["Health Potion"]);
+    drops.put(5, ["Health Potion"]);
+    drops.put(6, ["Key"]);
+    drops.put(7, ["Key"]);
+    drops.put(8, ["Key"]);
+    drops.put(9, ["Key"]);
 }

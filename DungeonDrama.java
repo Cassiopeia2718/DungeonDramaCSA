@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class DungeonDrama {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("What is your name adventure!");
+        System.out.println("What is your name adventurer?");
         String name = scanner.nextLine();
         String SEED = name;
         //Create Player Object with name, full health and starting inventory
@@ -11,6 +11,7 @@ public class DungeonDrama {
                             on the right a small stone door that blends into the wall around it(2) 
                             and in the middle a plain red wooden door, with mold speckling the edges.(3) /n
                             Which door do you choose?");
+        
         /*while(player.alive) {
             if(player.keys < 3) {
             room = new Rooms(SEED);
@@ -24,10 +25,6 @@ public class DungeonDrama {
         }
         
         */
-        
-
-
-
 
     }
 }
