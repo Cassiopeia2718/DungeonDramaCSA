@@ -17,8 +17,10 @@ public class DungeonDrama {
             room = new Rooms(SEED);
             room.run();
             }
+            else{
             room = new Rooms("Final Room");
             room.run
+            }
         }
         if (!player.alive) {
             System.out.println("You DIED with" + player.keys + "keys!")
