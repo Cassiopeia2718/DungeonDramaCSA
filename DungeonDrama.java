@@ -11,8 +11,6 @@ public class DungeonDrama {
                             on the right a small stone door that blends into the wall around it(2) 
                             and in the middle a plain red wooden door, with mold speckling the edges.(3) /n
                             Which door do you choose?");
-        Player player2 = new Player
-        player2.getHealth()
         /*while(player.alive) {
             if(player.keys < 3) {
             room = new Rooms(SEED);
