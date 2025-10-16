@@ -7,10 +7,10 @@ public class DungeonDrama {
         String name = scanner.nextLine();
         Long SEED = Long.valueOf(name); //Seed to be put into the room creation and modified based on decision tree
         Player player = new Player(name); //Creates player object with full heatlh and inventory
-        System.out.println("You find yourself in a circular room, the brick is mossy and cracked. The only exits are three doors: 
-                            on your left a large wrot iron door, with rusted hinges(1), 
-                            on the right a small stone door that blends into the wall around it(2) 
-                            and in the middle a plain red wooden door, with mold speckling the edges.(3) /n
+        System.out.println("You find yourself in a dark room. Three doors are ahead of you: 
+                            On your left, a wrought iron door, with rusted hinges(1), 
+                            On the right, a small stone door that blends into the wall(2) 
+                            And in the middle, a plain red wooden door, with mold speckling the edges.(3) /n
                             Which door do you choose?");
 
         while(player.alive()) {
