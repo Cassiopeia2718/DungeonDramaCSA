@@ -15,11 +15,11 @@ public class DungeonDrama {
 
         while(player.alive()) {
             if(player.keys() < 3) {
-            current_room = new Rooms(SEED); //Runs room based on current seed
+            Room current_room = new Room(SEED); //Runs room based on current seed
             current_room.run(scanner); 
             SEED = current_room.getSeed(); 
             } else {
-            current_room = new Rooms("Final Room"); //Runs room based on the "Final Room" Seed
+            Room current_room = new Room("Final Room"); //Runs room based on the "Final Room" Seed
             current_room.run(scanner); 
             SEED = current_room.getSeed();
             }
