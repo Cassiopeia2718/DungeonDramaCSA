@@ -1,12 +1,13 @@
 import java.util.Scanner;
 public class Room {
 
-    public void Room(Long seed) {
+    public static Room new_room(Long seed) {
 
     }
 
-    public void Room(String name) {
+    public static Room new_room(String name) {
         
     }
     
+    public static Ro
 }

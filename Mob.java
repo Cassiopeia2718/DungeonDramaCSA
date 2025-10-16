@@ -1,9 +1,9 @@
 import java.util.Scanner;
-import Random;
+import java.util.Random;
 public class Mob { // create_from_seed(seed) generates a random mob
     String type; //mob type
     String description;
-    String[] weak_to = ["sword", "crossbow", "shield"]; //weapons which will kill without taking damage
+    String[] weak_to = new String[]{"sword", "crossbow", "shield"}; //weapons which will kill without taking damage
     HashMap<Integer, String[]> drops = new HashMap<Integer, String[]>(); 
     //When killed a mob will get a number from 0-9 this hash map shows the drop outcome for each number
     drops.put(0, null);
@@ -11,95 +11,93 @@ public class Mob { // create_from_seed(seed) generates a random mob
     drops.put(2, null);
     drops.put(3, null);
     drops.put(4, null);
-    drops.put(5, ["Health Potion"]);
-    drops.put(6, ["Health Potion"]);
-    drops.put(7, ["Key"]);
-    drops.put(8, ["Key"]);
-    drops.put(9, ["Key"]);
-    int drop_num = floor(10*random(seed));
+    drops.put(5, {"Health Potion"});
+    drops.put(6, {"Health Potion"});
+    drops.put(7, {"Key"});
+    drops.put(8, {"Key"});
+    drops.put(9, {"Key"});
+    int drop_num = floor(10*random(seed));    
 
-    public static Mob create_from_seed(String seed) {
+    public static Mob create_from_seed(Long seed) {
         int option = floor(4*new Random(seed));
         switch (option) {
-            case 0:
-                return new skeleton(seed);
-            case 1:
-                return new zombie(seed);
-            case 2:
-                return new slime(seed);
-            case 3:
-                return new spider(seed);
-            case default:
-                throw new IllegalStateException();
+            case 0: return new Skeleton(seed);
+            case 1: return new Zombie(seed);
+            case 2: return new Slime(seed);
+            case 3: return new Spider(seed);
+            case default: throw new IllegalStateException();
         }
     }
 
-    public static create(String name, String seed) {
+    public static Mob create(String name, Long seed) {
         switch (name) {
-            case "skeleton": 
-                return new skeleton(seed);
-            case "zombie":
-                return new zombie(seed);
-            case "slime":
-                return new slime(seed);
-            case "spider":
-                return new spider(seed);
-            case "minotaur":
-                return new minotaur(seed);
+            case "Skeleton": return new Skeleton(seed);
+            case "Zombie": return new Sombie(seed);
+            case "Slime": return new Slime(seed);
+            case "Spider": return new Spider(seed);
+            case "Minotaur": return new Minotaur(seed);
             case default:
                 throw new IllegalStateException();
             }
     }
-  
 }
 
-public class skeleton extends Mob {
-    type = "skeleton";
-    weak_to = ["sword", "shield"];
-    description = "There stands a gaunt figure, nothing but taters of skin streched over a skeleton, 
-                    in his eyes smolder a pale flame, all thats left of an evil soul.
-                    He draws a bow from his back, and notches an arrow!";
-    drops.put(0, ["arrow"]);
-    drops.put(1, ["arrow"]);
-    drops.put(2, ["arrow"]);
-    drops.put(3, ["arrow"]);
-    drops.put(4, ["arrow"]);
-    drops.put(5, ["Health Potion", "arrow"]);
-    drops.put(6, ["Health Potion", "arrow"]);
-    drops.put(7, ["Key"]);
-    drops.put(8, ["Key"]);
-    drops.put(9, ["Key"]);
+public class Skeleton extends Mob {
+    public Skeleton(Long seed) {
+        type = "Skeleton";
+        weak_to = new String[]{"sword", "shield"};
+        description = "There stands a gaunt figure, nothing but taters of skin streched over a skeleton, 
+                        in his eyes smolder a pale flame, all thats left of an evil soul.
+                        He draws a bow from his back, and notches an arrow!";
+        drops.put(0, new String[]{"arrow"});
+        drops.put(1, new String[]{"arrow"});
+        drops.put(2, new String[]{"arrow"});
+        drops.put(3, new String[]{"arrow"});
+        drops.put(4, new String[]{"arrow"});
+        drops.put(5, new String[]{"Health Potion", "arrow"});
+        drops.put(6, new String[]{"Health Potion", "arrow"});
+        drops.put(7, new String[]{"Key"});
+        drops.put(8, new String[]{"Key"});
+        drops.put(9, new String[]{"Key"});
+    }
+    
 }
 
-public class zombie extends Mob {
-    type = "zombie";
-    weak_to = ["sword", "bow"];
-    description = "A pile of rags, rises in front of you revealing a rotting corpse
-                    It stumbles toward you, following its vile stench!";
-    drops.put(0, null);
-    drops.put(1, null);
-    drops.put(2, null);
-    drops.put(3, null);
-    drops.put(4, ["Health Potion"]);
-    drops.put(5, ["Health Potion"]);
-    drops.put(6, ["Health Potion"]);
-    drops.put(7, ["Key"]);
-    drops.put(8, ["Key"]);
-    drops.put(9, ["Key"]);
+public class Zombie extends Mob {
+    public Zombie(Long seed) {
+        type = "Zombie";
+        weak_to = new String[]{"sword", "bow"};
+        description = "A pile of rags, rises in front of you revealing a rotting corpse
+                        It stumbles toward you, following its vile stench!";
+        drops.put(0, null);
+        drops.put(1, null);
+        drops.put(2, null);
+        drops.put(3, null);
+        drops.put(4, new String[]{"Health Potion"});
+        drops.put(5, new String[]{"Health Potion"});
+        drops.put(6, new String[]{"Health Potion"});
+        drops.put(7, new String[]{"Key"});
+        drops.put(8, new String[]{"Key"});
+        drops.put(9, new String[]{"Key"});
+
+    }
+    
 }
 
-public class slime extends Mob {
-    type = "slime";
-    weak_to = ["Bow"];
-    description = ""
-    drops.put(0, null);
-    drops.put(1, null);
-    drops.put(2, null);
-    drops.put(3, null);
-    drops.put(4, ["Health Potion"]);
-    drops.put(5, ["Health Potion"]);
-    drops.put(6, ["Key"]);
-    drops.put(7, ["Key"]);
-    drops.put(8, ["Key"]);
-    drops.put(9, ["Key"]);
+public class Slime extends Mob {
+    public Slime(Long seed){
+        type = "Slime";
+        weak_to = new String[]{"Bow"};
+        description = ""
+        drops.put(0, null);
+        drops.put(1, null);
+        drops.put(2, null);
+        drops.put(3, null);
+        drops.put(4, new String[]{"Health Potion"});
+        drops.put(5, new String[]{"Health Potion"});
+        drops.put(6, new String[]{"Key"});
+        drops.put(7, new String[]{"Key"});
+        drops.put(8, new String[]{"Key"});
+        drops.put(9, new String[]{"Key"});
+    }
 }
