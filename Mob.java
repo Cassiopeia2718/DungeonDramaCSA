@@ -3,7 +3,7 @@ import java.util.Random;
 public class Mob { // create_from_seed(seed) generates a random mob
     String type; //mob type
     String description;
-    String[] weak_to = new String[]{"sword", "crossbow", "shield"}; //weapons which will kill without taking damage
+    String[] weak_to = new String[]{"Sword", "Crossbow", "Shield"}; //weapons which will kill without taking damage
     HashMap<Integer, String[]> drops = new HashMap<Integer, String[]>(); 
     //When killed a mob will get a number from 0-9 this hash map shows the drop outcome for each number
     drops.put(0, null);
@@ -66,7 +66,7 @@ public class Skeleton extends Mob {
 public class Zombie extends Mob {
     public Zombie(Long seed) {
         type = "Zombie";
-        weak_to = new String[]{"Sword", "Bow"};
+        weak_to = new String[]{"Sword", "Crossbow"};
         description = "A pile of rags, rises in front of you revealing a rotting corpse
                         It stumbles toward you, following its vile stench!";
         drops.put(0, null);
@@ -87,7 +87,7 @@ public class Zombie extends Mob {
 public class Slime extends Mob {
     public Slime(Long seed){
         type = "Slime";
-        weak_to = new String[]{"Bow"};
+        weak_to = new String[]{"Crossbow"};
         description = "An oozing green blob, quivers and begins sliding toward you leaving a slimy trail on the stones.";
         drops.put(0, null);
         drops.put(1, null);
@@ -105,7 +105,7 @@ public class Slime extends Mob {
 public class Spider extands Mob {
     public Spider(Long seed){
         type = "Spider";
-        weak_to = new String[]{"Bow, Shield"};
+        weak_to = new String[]{"Crossbow, Shield"};
         description = "Cowebs cover the ceiling, red eyes stare down at you";
         drops.put(0, null);
         drops.put(1, null);

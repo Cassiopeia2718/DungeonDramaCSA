@@ -13,7 +13,7 @@ public class Player {
             this.alive = true;
             this.health = 3;
             this.name = name;
-            this.inventory = ["sword, sheild, crossbow"];
+            this.inventory = ["Sword, Shield, Crossbow"];
             this.arrows = 2;
         }
 
