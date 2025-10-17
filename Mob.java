@@ -45,7 +45,7 @@ public class Mob { // create_from_seed(seed) generates a random mob
 public class Skeleton extends Mob {
     public Skeleton(Long seed) {
         type = "Skeleton";
-        weak_to = new String[]{"sword", "shield"};
+        weak_to = new String[]{"Sword", "Shield"};
         description = "There stands a gaunt figure, nothing but taters of skin streched over a skeleton, 
                         in his eyes smolder a pale flame, all thats left of an evil soul.
                         He draws a bow from his back, and notches an arrow!";
@@ -66,7 +66,7 @@ public class Skeleton extends Mob {
 public class Zombie extends Mob {
     public Zombie(Long seed) {
         type = "Zombie";
-        weak_to = new String[]{"sword", "bow"};
+        weak_to = new String[]{"Sword", "Bow"};
         description = "A pile of rags, rises in front of you revealing a rotting corpse
                         It stumbles toward you, following its vile stench!";
         drops.put(0, null);
@@ -88,7 +88,7 @@ public class Slime extends Mob {
     public Slime(Long seed){
         type = "Slime";
         weak_to = new String[]{"Bow"};
-        description = ""
+        description = "An oozing green blob, quivers and begins sliding toward you leaving a slimy trail on the stones.";
         drops.put(0, null);
         drops.put(1, null);
         drops.put(2, null);
@@ -96,6 +96,24 @@ public class Slime extends Mob {
         drops.put(4, new String[]{"Health Potion"});
         drops.put(5, new String[]{"Health Potion"});
         drops.put(6, new String[]{"Key"});
+        drops.put(7, new String[]{"Key"});
+        drops.put(8, new String[]{"Key"});
+        drops.put(9, new String[]{"Key"});
+    }
+}
+
+public class Spider extands Mob {
+    public Spider(Long seed){
+        type = "Spider";
+        weak_to = new String[]{"Bow, Shield"};
+        description = "Cowebs cover the ceiling, red eyes stare down at you";
+        drops.put(0, null);
+        drops.put(1, null);
+        drops.put(2, null);
+        drops.put(3, null);
+        drops.put(4, new String[]{"Health Potion"});
+        drops.put(5, new String[]{"Health Potion"});
+        drops.put(6, new String[]{"Health Potion"});
         drops.put(7, new String[]{"Key"});
         drops.put(8, new String[]{"Key"});
         drops.put(9, new String[]{"Key"});
