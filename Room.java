@@ -1,6 +1,8 @@
 import java.util.Scanner;
 public class Room {
 
+    private int doors = 
+
     public static Room new_room(Long seed) {
 
     }

@@ -1,10 +1,10 @@
 import java.util.Scanner;
 import java.util.Random;
 public class Mob { // create(seed) generates a random mob
-    String type; //mob type
-    String description;
-    String[] weak_to = new String[]{"Sword", "Crossbow", "Shield"}; //weapons which will kill without taking damage
-    HashMap<Integer, String[]> drops = new HashMap<Integer, String[]>(); 
+    private String type; //mob type
+    private String description;
+    private String[] weak_to = new String[]{"Sword", "Crossbow", "Shield"}; //weapons which will kill without taking damage
+    private HashMap<Integer, String[]> drops = new HashMap<Integer, String[]>(); 
     //When killed a mob will get a number from 0-9 this hash map shows the drop outcome for each number
 
     drops.put(0, null);
@@ -17,7 +17,7 @@ public class Mob { // create(seed) generates a random mob
     drops.put(7, {"Key"});
     drops.put(8, {"Key"});
     drops.put(9, {"Key"});
-    int drop_num;    
+    private int drop_num;    
 
     public static Mob create(Long seed) {
         Random random = new Random(seed);
