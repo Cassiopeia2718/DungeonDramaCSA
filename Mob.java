@@ -1,11 +1,12 @@
 import java.util.Scanner;
 import java.util.Random;
-public class Mob { // create_from_seed(seed) generates a random mob
+public class Mob { // create(seed) generates a random mob
     String type; //mob type
     String description;
     String[] weak_to = new String[]{"Sword", "Crossbow", "Shield"}; //weapons which will kill without taking damage
     HashMap<Integer, String[]> drops = new HashMap<Integer, String[]>(); 
     //When killed a mob will get a number from 0-9 this hash map shows the drop outcome for each number
+
     drops.put(0, null);
     drops.put(1, null);
     drops.put(2, null);
@@ -16,15 +17,16 @@ public class Mob { // create_from_seed(seed) generates a random mob
     drops.put(7, {"Key"});
     drops.put(8, {"Key"});
     drops.put(9, {"Key"});
-    int drop_num = floor(10*random(seed));    
+    int drop_num;    
 
-    public static Mob create_from_seed(Long seed) {
-        int option = floor(4*new Random(seed));
+    public static Mob create(Long seed) {
+        Random random = new Random(seed);
+        int option = random.nextInt(4);
         switch (option) {
             case 0: return new Skeleton(seed);
-            case 1: return new Zombie(seed);
-            case 2: return new Slime(seed);
-            case 3: return new Spider(seed);
+            case 1: return new Zombie(seed+1);
+            case 2: return new Slime(seed+2);
+            case 3: return new Spider(seed+3);
             case default: throw new IllegalStateException();
         }
     }
@@ -59,6 +61,8 @@ public class Skeleton extends Mob {
         drops.put(7, new String[]{"Key"});
         drops.put(8, new String[]{"Key"});
         drops.put(9, new String[]{"Key"});
+        Random random = new Random(seed);
+        drop_num = random.nextInt(10)
     }
     
 }
@@ -79,6 +83,8 @@ public class Zombie extends Mob {
         drops.put(7, new String[]{"Key"});
         drops.put(8, new String[]{"Key"});
         drops.put(9, new String[]{"Key"});
+        Random random = new Random(seed);
+        drop_num = random.nextInt(10)
 
     }
     
@@ -99,6 +105,8 @@ public class Slime extends Mob {
         drops.put(7, new String[]{"Key"});
         drops.put(8, new String[]{"Key"});
         drops.put(9, new String[]{"Key"});
+        Random random = new Random(seed);
+        drop_num = random.nextInt(10)
     }
 }
 
@@ -117,5 +125,7 @@ public class Spider extands Mob {
         drops.put(7, new String[]{"Key"});
         drops.put(8, new String[]{"Key"});
         drops.put(9, new String[]{"Key"});
+        Random random = new Random(seed);
+        drop_num = random.nextInt(10)
     }
 }

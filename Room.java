@@ -8,6 +8,22 @@ public class Room {
     public static Room new_room(String name) {
         
     }
-    
-    public static Ro
+}
+
+public class Hallway extends Room {
+
+
+}
+
+public class Treasure extends Room {
+
+
+}
+
+public class Large extends Room {
+
+}
+
+public class Fountain extends Room {
+
 }
